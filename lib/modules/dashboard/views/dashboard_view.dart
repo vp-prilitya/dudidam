@@ -1,5 +1,6 @@
 import 'package:dudidam/components/logo_with_text.dart';
 import 'package:dudidam/modules/dashboard/controllers/dashboard_controller.dart';
+import 'package:dudidam/modules/dashboard/views/components/category_dashboard.dart';
 import 'package:dudidam/modules/dashboard/views/components/default_tab_dashboard.dart';
 import 'package:dudidam/modules/dashboard/views/components/search_dashboard.dart';
 import 'package:dudidam/theme/text_style.dart';
@@ -63,6 +64,9 @@ class DashboardView extends GetView<DashboardController> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 const DefaultTabDashboard(),
+                                const SizedBox(
+                                  height: 30,
+                                ),
                                 const SizedBox(
                                   height: 30,
                                 ),

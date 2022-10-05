@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:dudidam/models/category/data_category_model.dart';
 import 'package:dudidam/models/movie/data_movie_model.dart';
 
 class MovieService {
@@ -18,6 +19,22 @@ class MovieService {
       return right(_result);
     } on DioError catch (err) {
       return left(err.message);
+    }
+  }
+
+  Future<Either<String, List<DataCategoryModel>>> getDataCategory() async {
+    Response response;
+
+    try {
+      response = await _dio.get("https://dudidam.lpro.site/api/category");
+
+      List data = response.data['data'];
+
+      final _result = data.map((e) => DataCategoryModel.fromJson(e)).toList();
+
+      return right(_result);
+    } on DioError catch (err) {
+      return left('error');
     }
   }
 

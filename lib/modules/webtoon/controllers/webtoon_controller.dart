@@ -1,18 +1,14 @@
-import 'dart:developer';
-
 import 'package:dudidam/injector.dart';
-import 'package:dudidam/models/category/data_category_model.dart';
-import 'package:dudidam/models/movie/data_movie_model.dart';
-import 'package:dudidam/services/movie_service.dart';
+import 'package:dudidam/models/webtoon/data_webtoon_model.dart';
+import 'package:dudidam/services/webtoon_service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class DashboardController extends GetxController {
+class WebtoonController extends GetxController {
   final dataHistory = GetStorage();
   RxString dataLast = "".obs;
 
-  RxList<DataMovieModel> dataMovie = <DataMovieModel>[].obs;
-  RxList<DataCategoryModel> dataCategory = <DataCategoryModel>[].obs;
+  RxList<DataWebtoonModel> dataWebtoon = <DataWebtoonModel>[].obs;
 
   @override
   void onInit() {
@@ -32,21 +28,11 @@ class DashboardController extends GetxController {
   }
 
   void getData() async {
-    final result = await locator<MovieService>().getMovie();
+    final result = await locator<WebtoonService>().getWebtoon();
     result.fold(
       (l) => {print(l)},
       (r) {
-        dataMovie.value = r;
-      },
-    );
-  }
-
-  void getDataCategory() async {
-    final result = await locator<MovieService>().getDataCategory();
-    result.fold(
-      (l) => {print(l)},
-      (r) {
-        dataCategory.value = r;
+        dataWebtoon.value = r;
       },
     );
   }

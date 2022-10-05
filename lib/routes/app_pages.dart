@@ -8,6 +8,11 @@ import 'package:dudidam/modules/intro/binding/intro_binding.dart';
 import 'package:dudidam/modules/intro/view/intro_view.dart';
 import 'package:dudidam/modules/play/play_binding.dart';
 import 'package:dudidam/modules/play/play_view.dart';
+import 'package:dudidam/modules/read_webtoon/read_webtoon_binding.dart';
+import 'package:dudidam/modules/read_webtoon/read_webtoon_view.dart';
+import 'package:dudidam/modules/webtoon/bindings/webtoon_binding.dart';
+import 'package:dudidam/modules/webtoon_detail/binding/webtoon_detail_binding.dart';
+import 'package:dudidam/modules/webtoon_detail/view/webtoon_detail_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 part 'app_routes.dart';
@@ -35,6 +40,16 @@ class AppPages {
       name: Routes.intro,
       page: () => const IntroView(),
       binding: IntroBinding(),
+    ),
+    GetPage(
+      name: Routes.detailWebtoon,
+      page: () => const WebtoonDetailView(),
+      binding: WebtoonDetailBinding(),
+    ),
+    GetPage(
+      name: Routes.readWebtoon,
+      page: () => const ReadWebtoonView(),
+      binding: ReadWebtoonBinding(),
     ),
   ];
 }

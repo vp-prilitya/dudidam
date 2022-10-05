@@ -1,7 +1,7 @@
 import 'package:dudidam/modules/dashboard/views/dashboard_view.dart';
-import 'package:dudidam/modules/download/download_view.dart';
 import 'package:dudidam/modules/favorite/favorite_view.dart';
 import 'package:dudidam/modules/home/controller/home_controller.dart';
+import 'package:dudidam/modules/webtoon/view/webtoon_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -56,7 +56,7 @@ class _HomeViewState extends State<HomeView> {
             DashboardView(),
             ListMovieView(),
             FavoriteView(),
-            DownloadView(),
+            WebtoonView(),
           ],
         ),
         bottomNavigationBar: GetX<HomeController>(
@@ -68,9 +68,8 @@ class _HomeViewState extends State<HomeView> {
               BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
               BottomNavigationBarItem(label: 'Movie', icon: Icon(Icons.movie)),
               BottomNavigationBarItem(
-                  label: 'Favorite', icon: Icon(Icons.favorite)),
-              BottomNavigationBarItem(
-                  label: 'Download', icon: Icon(Icons.download)),
+                  label: 'Category', icon: Icon(Icons.apps_rounded)),
+              BottomNavigationBarItem(label: 'Webtoon', icon: Icon(Icons.book)),
             ],
           ),
         ));

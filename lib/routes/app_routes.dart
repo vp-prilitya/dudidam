@@ -5,4 +5,6 @@ abstract class Routes {
   static const play = '/play';
   static const home = '/home';
   static const intro = '/intro';
+  static const detailWebtoon = '/detail-webtoon';
+  static const readWebtoon = '/read-webtoon';
 }
