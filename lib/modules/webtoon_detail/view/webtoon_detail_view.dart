@@ -49,7 +49,7 @@ class WebtoonDetailView extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           backgroundImage: NetworkImage(
-                              "https://dudidam.lpro.site/${state?.studio!.logo}"),
+                              "https://dudidam.lpro.site/${state.studio!.logo}"),
                         ),
                         SizedBox(
                           width: 10,
@@ -58,11 +58,11 @@ class WebtoonDetailView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "${state?.studio!.name}",
+                              "${state.studio!.name}",
                               style: headingBlack,
                             ),
                             Text(
-                              "${state?.studio!.location}",
+                              "${state.studio!.location}",
                               style: TextStyle(
                                   color: Colors.grey.shade400, fontSize: 12),
                             ),
@@ -81,7 +81,7 @@ class WebtoonDetailView extends StatelessWidget {
                       height: 15,
                     ),
                     Text(
-                      "${state?.series[0].synopsis}",
+                      "${state.series[0].synopsis}",
                       style: TextStyle(color: Colors.grey),
                     ),
                   ],
@@ -116,20 +116,23 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
         buildAppBar(shrinkOffset),
         Center(
             child: InkWell(
-          onTap: () => Get.toNamed(Routes.readWebtoon),
+          onTap: () => Get.toNamed(Routes.readWebtoon, arguments: [
+            controller.dataWebtoonModel.title,
+            controller.dataWebtoonModel.series[0].file
+          ]),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-            decoration: BoxDecoration(
-              color: Colors.redAccent,
-              borderRadius: BorderRadius.circular(12),
-              backgroundBlendMode: BlendMode.multiply
-            ),
-            child: Text('Read Now', style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.white
-            ),)
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+              decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(12),
+                  backgroundBlendMode: BlendMode.multiply),
+              child: Text(
+                'Read Now',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
+              )),
         )),
         Container(
           padding: EdgeInsets.only(top: 40, left: 15, right: 15),
