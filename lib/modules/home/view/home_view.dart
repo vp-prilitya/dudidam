@@ -1,5 +1,5 @@
+import 'package:dudidam/modules/category/views/category_view.dart';
 import 'package:dudidam/modules/dashboard/views/dashboard_view.dart';
-import 'package:dudidam/modules/favorite/favorite_view.dart';
 import 'package:dudidam/modules/home/controller/home_controller.dart';
 import 'package:dudidam/modules/webtoon/view/webtoon_view.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class _HomeViewState extends State<HomeView> {
           children: const <Widget>[
             DashboardView(),
             ListMovieView(),
-            FavoriteView(),
+            CategoryView(),
             WebtoonView(),
           ],
         ),

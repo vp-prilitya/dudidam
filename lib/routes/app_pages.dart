@@ -1,3 +1,5 @@
+import 'package:dudidam/modules/category/bindings/category_binding.dart';
+import 'package:dudidam/modules/category/views/category_view.dart';
 import 'package:dudidam/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:dudidam/modules/dashboard/views/dashboard_view.dart';
 import 'package:dudidam/modules/detail/binding/detail_binding.dart';
@@ -25,6 +27,11 @@ class AppPages {
       name: Routes.home,
       page: () => const HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: Routes.category,
+      page: () => const CategoryView(),
+      binding: CategoryBinding(),
     ),
     GetPage(
       name: Routes.detail,

@@ -34,7 +34,7 @@ class MovieService {
 
       return right(_result);
     } on DioError catch (err) {
-      return left('error');
+      return left(err.message);
     }
   }
 

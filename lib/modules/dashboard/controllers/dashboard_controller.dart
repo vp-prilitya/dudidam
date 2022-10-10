@@ -18,6 +18,7 @@ class DashboardController extends GetxController {
   void onInit() {
     checkHistory();
     getData();
+    getCategory();
     super.onInit();
   }
 
@@ -41,7 +42,7 @@ class DashboardController extends GetxController {
     );
   }
 
-  void getDataCategory() async {
+  void getCategory() async {
     final result = await locator<MovieService>().getDataCategory();
     result.fold(
       (l) => {print(l)},
